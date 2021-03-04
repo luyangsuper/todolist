@@ -1,0 +1,15 @@
+@import '~antd/dist/antd.css';
+.main{
+    margin: 0 auto;
+    padding-top: 10rem;
+    width: 50rem;
+}
+.head{
+    display: flex;
+    width: 50rem;
+}   
+.body{
+    width: 50rem;
+    max-height: 30rem;
+    overflow-y: auto;
+}
