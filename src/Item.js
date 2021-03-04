@@ -5,7 +5,9 @@ import './item.css'
 type Props = {
     index: number,
     text: string,
-    time: string
+    time: string,
+    editItem: Function,
+    deleteItem: Fuction
 }
 type State = {
     text: string,
@@ -19,10 +21,10 @@ class Item extends React.Component<Props,State>{
             text: props.text,
             isEditing: false,
         };
-        this.cancelEdit = this.cancelEdit.bind(this);
-        this.editText = this.editText.bind(this);
-        this.confirmEdit = this.confirmEdit.bind(this);
-        this.startEdit = this.startEdit.bind(this);
+        this.cancelEdit = this.cancelEdit.bind(this)
+        this.confirmEdit = this.confirmEdit.bind(this)
+        this.editText = this.editText.bind(this)
+        this.startEdit = this.startEdit.bind(this)
     }
     cancelEdit(){
         this.setState({
@@ -36,7 +38,7 @@ class Item extends React.Component<Props,State>{
         })
         this.props.editItem(this.state.text,this.props.index)
     }
-    editText(event: any){
+    editText(event: SyntheticEvent<HTMLButtonElement>){
         this.setState({
             text: event.target.value
         })

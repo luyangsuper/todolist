@@ -12,11 +12,10 @@ type State = {
 type Props = {
 
 }
-
 class Todo extends React.Component<Props,State>{
-  state: State
-  constructor(props){
-    super(props)
+  state: State;
+  constructor(props: Props){
+    super(props);
     this.state = {
       todolist: [],
       text: '',
@@ -24,8 +23,8 @@ class Todo extends React.Component<Props,State>{
     };
     this.editText = this.editText.bind(this)
     this.addItem = this.addItem.bind(this)
+    this.editItem = this.editItem.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
-    this.editItem  = this.editItem.bind(this)
   }
   componentDidUpdate(preProps: Object,preState: Object){
     if(preState.todolist.length !== this.state.todolist.length && preState.todolist.length !== 0){
@@ -42,9 +41,9 @@ class Todo extends React.Component<Props,State>{
       }
     }
   }
-  editText(event: any){
+  editText(event: SyntheticEvent<HTMLButtonElement>){
     this.setState({
-      text: event.target.value
+      text: event.target.value 
     })
     if(event.target.value.trim() !== ''){
       this.setState({
