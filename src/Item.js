@@ -19,10 +19,10 @@ class Item extends React.Component<Props,State>{
             text: props.text,
             isEditing: false,
         };
-        this.cancelEdit: Function = this.cancelEdit.bind(this);
-        this.editText: Function = this.editText.bind(this);
-        this.confirmEdit: Function = this.confirmEdit.bind(this);
-        this.startEdit: Function = this.startEdit.bind(this);
+        this.cancelEdit = this.cancelEdit.bind(this);
+        this.editText = this.editText.bind(this);
+        this.confirmEdit = this.confirmEdit.bind(this);
+        this.startEdit = this.startEdit.bind(this);
     }
     cancelEdit(){
         this.setState({

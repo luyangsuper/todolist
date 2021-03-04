@@ -21,11 +21,11 @@ class Todo extends React.Component<Props,State>{
       todolist: [],
       text: '',
       disabled: true
-    }
-    this.editText: Function = this.editText.bind(this)
-    this.addItem: Function = this.addItem.bind(this)
-    this.deleteItem: Function = this.deleteItem.bind(this)
-    this.editItem: Function = this.editItem.bind(this)
+    };
+    this.editText = this.editText.bind(this)
+    this.addItem = this.addItem.bind(this)
+    this.deleteItem = this.deleteItem.bind(this)
+    this.editItem  = this.editItem.bind(this)
   }
   componentDidUpdate(preProps: Object,preState: Object){
     if(preState.todolist.length !== this.state.todolist.length && preState.todolist.length !== 0){
